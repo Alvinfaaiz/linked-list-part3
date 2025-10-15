@@ -30,8 +30,32 @@ address alokasi(mahasiswa M){
     return p;
 }
 
+void insertFirst (list &L, address p){
+    if(L.first = nullptr){
+        L.first = p;
+    }else{
+        p->next = L.first;
+        L.first = p;
+    }
+}
+
 int main()
 {
-    cout << "Hello world!" << endl;
+    list L;
+    createList(L);
+
+    mahasiswa m1 = {"Jajang", "101240", 4};
+    mahasiswa m2 = {"Udin", "101241", 1};
+    mahasiswa m3 = {"Ida", "101242", 3};
+
+    address p1 = alokasi(m1);
+    insertFirst(L, p1);
+
+    address p2 = alokasi(m2);
+    insertFirst(L, p2);
+
+    address p3=alokasi(m3);
+    insertFirst(L,p3);
+
     return 0;
 }
